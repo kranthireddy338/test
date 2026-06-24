@@ -1,1 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Proposal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      margin: 20px;
+      cursor: pointer;
+    }
+    #accept {
+      background-color: green;
+      color: white;
+    }
+    #no {
+      background-color: red;
+      color: white;
+      position: relative;
+    }
+    #message {
+      margin-top: 50px;
+      font-size: 24px;
+      color: purple;
+      display: none;
+      animation: fadeIn 2s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <h1>Will you accept my proposal?</h1>
+  <button id="accept">Accept</button>
+  <button id="no">No</button>
+  <div id="message">💖 Thank you for accepting! You made me the happiest person 💖</div>
 
+  <script>
+    const acceptBtn = document.getElementById('accept');
+    const noBtn = document.getElementById('no');
+    const message = document.getElementById('message');
+
+    // Show message when "Accept" is clicked
+    acceptBtn.addEventListener('click', () => {
+      message.style.display = 'block';
+    });
+
+    // Make "No" button run away when hovered
+    noBtn.addEventListener('mouseover', () => {
+      const x = Math.floor(Math.random() * 200) - 100;
+      const y = Math.floor(Math.random() * 200) - 100;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    });
+  </script>
+</body>
+</html>
